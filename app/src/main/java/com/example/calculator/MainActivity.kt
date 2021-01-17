@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
         //strings
         var num1String: String = ""
         var num2String: String = ""
+        var op: Char = ' '
         //int
-        var num1: Float = 0.0F
-        var num2: Float = 0.0F
+        var answer: Float = 0.0F
         //click functions
         buttonClear.setOnClickListener {
             num1String = ""
@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         buttonPlus.setOnClickListener {
             num2String = num1String
             num1String = ""
+            op = '+'
             textView.text = "+" }
 
         button4.setOnClickListener {
@@ -77,6 +78,7 @@ class MainActivity : AppCompatActivity() {
         buttonMinus.setOnClickListener {
             num2String = num1String
             num1String = ""
+            op = '-'
             textView.text = "-" }
 
         button7.setOnClickListener {
@@ -97,6 +99,7 @@ class MainActivity : AppCompatActivity() {
         buttonMulti.setOnClickListener {
             num2String = num1String
             num1String = ""
+            op = '*'
             textView.text = "*"
         }
 
@@ -110,11 +113,22 @@ class MainActivity : AppCompatActivity() {
             textView.text = num1String
         }
 
-        buttonEqual.setOnClickListener {  }
+        buttonEqual.setOnClickListener {
+
+            when(op)
+            {
+                '+' -> answer = num1String.toFloat() + num2String.toFloat()
+                '-' -> answer = num1String.toFloat() - num2String.toFloat()
+                '*' -> answer = num1String.toFloat() * num2String.toFloat()
+                '/' -> answer = num1String.toFloat() / num2String.toFloat()
+            }
+            textView.text = answer.toString()
+        }
 
         buttonDevide.setOnClickListener {
             num2String = num1String
             num1String = ""
+            op = '/'
             textView.text = "/"
         }
     }
