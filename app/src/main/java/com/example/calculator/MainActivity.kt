@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         var num1String: String = ""
         var num2String: String = ""
         var op: Char = ' '
-        //int
+        //float
         var answer: Float = 0.0F
         //click functions
         buttonClear.setOnClickListener {
