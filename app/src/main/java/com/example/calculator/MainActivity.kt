@@ -32,11 +32,11 @@ class MainActivity : AppCompatActivity() {
         val buttonDevide: Button = findViewById(R.id.buttonDevide)
         //kotlin var
         //strings
-        var num1String: String = ""
-        var num2String: String = ""
-        var op: Char = ' '
+        var num1String = ""
+        var num2String = ""
+        var op = ' '
         //float
-        var answer: Float = 0.0F
+        var answer = 0.0F
         //click functions
         buttonClear.setOnClickListener {
             num1String = ""
@@ -123,6 +123,7 @@ class MainActivity : AppCompatActivity() {
                 '/' -> answer = num1String.toFloat() / num2String.toFloat()
             }
             textView.text = answer.toString()
+            num1String = answer.toString()
         }
 
         buttonDevide.setOnClickListener {
