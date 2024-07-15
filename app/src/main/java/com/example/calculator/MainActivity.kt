@@ -118,9 +118,9 @@ class MainActivity : AppCompatActivity() {
             when(op)
             {
                 '+' -> answer = num1String.toFloat() + num2String.toFloat()
-                '-' -> answer = num1String.toFloat() - num2String.toFloat()
+                '-' -> answer = num2String.toFloat() - num1String.toFloat()
                 '*' -> answer = num1String.toFloat() * num2String.toFloat()
-                '/' -> answer = num1String.toFloat() / num2String.toFloat()
+                '/' -> answer = num2String.toFloat() / num1String.toFloat()
             }
             textView.text = answer.toString()
             num1String = answer.toString()
