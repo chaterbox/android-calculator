@@ -43,10 +43,12 @@ class MainActivity : AppCompatActivity() {
             num2String = ""
             textView.text = "0"
         }
+
         button1.setOnClickListener{
             num1String += "1"
             textView.text = num1String
         }
+
         button2.setOnClickListener {
             num1String += "2"
             textView.text = num1String
@@ -114,7 +116,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonEqual.setOnClickListener {
-
             when(op)
             {
                 '+' -> answer = num1String.toFloat() + num2String.toFloat()
@@ -133,5 +134,4 @@ class MainActivity : AppCompatActivity() {
             textView.text = "/"
         }
     }
-
 }
